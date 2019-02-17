@@ -1,9 +1,9 @@
 import React from 'react';
-import Article from './Article';
+import ArticleCard from './ArticleCard';
 
 const Articles = ({articles}) => {
     const renderArticles = articles.map((article, idx) => 
-        <Article key={idx} article={article}/>
+        <ArticleCard key={idx} article={article}/>
     )
     return(
         <div>
