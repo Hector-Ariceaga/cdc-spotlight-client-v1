@@ -12,6 +12,16 @@ class App extends Component {
     }
   }
 
+  componentDidMount(){
+    fetch('http://localhost:5000/api/v1/articles')
+    .then(res => res.json())
+    .then( articles => {
+      this.setState({
+        articles: articles
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
