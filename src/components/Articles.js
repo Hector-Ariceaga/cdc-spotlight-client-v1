@@ -1,36 +1,28 @@
 import React, { Component } from 'react';
 import ArticleCard from './ArticleCard';
+import { connect } from 'react-redux'
+import { fetchArticles } from './actions/articleActions'
 
-export default class Articles extends Component {
-
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            articles: []
-        }
-    }
+class Articles extends Component {
 
     componentDidMount(){
-        fetch('http://localhost:5000/api/v1/articles')
-        .then(res => res.json())
-        .then( articles => {
-          this.setState({
-            articles: articles
-          })
-        })
-      }
+      this.props.fetchArticles
+    }
 
-    
       render(){
-        const renderCards = this.state.articles.map((article, idx) => <ArticleCard key={idx} article={article}/>)
-        
+        const { articles } this.props
+        const renderCards = articles.map((article, idx) => <ArticleCard key={idx} article={article}/>)
+
         return(
             <div>
-                <h2>Today's Articles</h2>
+                <h2>Articles</h2>
                 {renderCards}
             </div>
         )
       }
-    
 }
+
+const mapStateToProps = state = {
+  articles: state.articles
+}
+export default connect (mapStateToProps, {fetchArticles})(Articles)
