@@ -6,7 +6,7 @@ import { fetchArticles } from './actions/articleActions'
 class Articles extends Component {
 
     componentDidMount(){
-      this.props.fetchArticles
+      this.props.fetchArticles()
     }
 
       render(){
