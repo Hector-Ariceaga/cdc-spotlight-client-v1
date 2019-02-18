@@ -1,37 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-import Articles from './components/Articles';
-import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './components/Home'
+import Articles from './components/Articles'
+import About from './components/About'
+import NavBar from './components/NavBar';
 
 class App extends Component {
-
-  constructor(){
-    super()
-    this.state = {
-      articles: []
-    }
-  }
-
-  componentDidMount(){
-    fetch('http://localhost:5000/api/v1/articles')
-    .then(res => res.json())
-    .then( articles => {
-      this.setState({
-        articles: articles
-      })
-    })
-  }
 
   render() {
     return (
       <div className="App">
-      <h1>Welcome to Spotlight</h1>
-        <div className="navbar">
-          <Navbar />
-        </div>
-        <div>
-          <Articles articles={this.state.articles}/>
-        </div>
+        <Router>
+          <div>
+            <NavBar />
+
+            <Route exact path='/' component={Home} />
+            <Route exact path='/articles' component={Articles} />
+            <Route exact path="/about" component={About} />
+          </div>
+        </Router>
+       
       </div>
     );
   }
