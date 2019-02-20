@@ -1,6 +1,6 @@
-import {startFetchingData, stopFetchingData} from './loadingActions'
 
-const API_URL = 'http://localhost:5000'
+
+const API_URL = 'http://localhost:5000/api/v1'
 
 export const setArticles = articles => {
   return {
@@ -9,15 +9,14 @@ export const setArticles = articles => {
   }
 }
 
-export const fetchArticles = () => {
+export const fetchArticles = (dispatch) => {
   return dispatch => {
-    return dispatch(startFetchingData)
-
-    fetch(`${API_URL}/articles`)
+    dispatch({type: 'START_FETCHING_DATA'})
+    return fetch(`${API_URL}/articles`)
     .then(res => res.json())
     .then(articles => {
-      dispatch(setArticles(articles))
-      dispatch(stopFetchingData))
+      dispatch({type: 'SET_ARTICLES', articles})
+      dispatch({type: 'STOP_FETCHING_DATA'})
     })
   }
 }
