@@ -1,4 +1,4 @@
-export default loadingReducer(state = false, action) {
+export default function loadingReducer(state = false, action) {
   switch(action.type){
     case 'START_FETCHING_DATA':
       return true

@@ -1,4 +1,4 @@
-export default articlesReducer(state={}, action) {
+export default function articlesReducer(state={}, action) {
   switch(action.type){
     case 'SET_ARTICLES':
       return action.articles
