@@ -1,5 +1,5 @@
 import React from 'react';
-import Comments from './Comments'
+import CommentsContainer from '../containers/CommentsContainer';
 
 const Article = ({article}) => {
     return(
@@ -7,7 +7,7 @@ const Article = ({article}) => {
             <h1>{article.title}</h1>
             <h3>{article.author}</h3>
             <p>{article.content}</p>
-            <Comments comments={article.comments} />
+            <CommentsContainer comments={article.comments} />
         </div>
     )
 }
