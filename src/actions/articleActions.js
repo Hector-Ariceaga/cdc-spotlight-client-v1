@@ -16,7 +16,6 @@ export const fetchArticles = (dispatch) => {
     .then(res => res.json())
     .then(articles => {
       dispatch({type: 'SET_ARTICLES', articles})
-      dispatch({type: 'STOP_FETCHING_DATA'})
     })
   }
 }
