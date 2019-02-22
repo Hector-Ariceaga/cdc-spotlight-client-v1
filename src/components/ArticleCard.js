@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const ArticleCard = (props) => {
 
     const {id, title, author, description} = props.article
+    
     return(
         <div>
             <h1>{title}</h1>

@@ -8,14 +8,12 @@ export const setComments = comments => {
 }
 
 export const fetchComments = (id) => {
-  debugger;
   return (dispatch) => {
     dispatch({type: 'START_FETCHING_DATA'})
     return fetch(`${API_URL}/articles/${id}/comments`)
     .then(res => res.json())
     .then(comments => {
-      debugger;
-      dispatch({type: 'SET_COMMENTS', comments})
+      dispatch(setComments(comments))
     })
   }
 }

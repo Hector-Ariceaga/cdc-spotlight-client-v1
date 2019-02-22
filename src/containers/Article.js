@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
-import CommentsContainer from '../containers/CommentsContainer';
+import CommentsContainer from './CommentsContainer';
 import {fetchComments} from '../actions/commentActions'
 import {fetchArticle} from '../actions/articleActions'
 
 class Article extends Component {
-    componentWillMount = () => {
+    componentDidMount = () => {
         this.props.fetchArticle(this.props.articleId)
-        this.props.fetchComments(this.props.articleId)
     }
 
     componentWillReceiveProps = (props) => {
@@ -18,12 +16,13 @@ class Article extends Component {
     }
     
     render(){
-     const {title, author, content} = this.props.article
+     const {id, title, author, content} = this.props.article
         return(
             <div>
                 <h1>{title}</h1>
                 <h3>{author}</h3>
                 <p>{content}</p>
+                <CommentsContainer comments={this.props.comments} articleId={id}/>
             </div>
         )
     }

@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { fetchComments } from '../actions/commentActions'
-import Comment from '../components/Comment'
+import { connect } from 'react-redux';
+import { fetchComments} from '../actions/commentActions'
+import Comments from '../components/Comments'
 
 
-class Comments extends Component {
-    
-    componentDidMount = () => {
+
+class CommentsContainer extends Component {
+
+    handleOnClick = () => {
         this.props.fetchComments(this.props.articleId)
     }
 
     render(){
-        const comments = this.props.comments
-        const renderComments = comments.map(comment => <Comment key={comment.id} comment={comment} />)
-            
-        return(
-            <div>
-                <h2>Comments</h2>
-                {renderComments}
-            </div>
-        )
-    }
+            return(
+                <div>
+                    <h2>Comments</h2>
+                    <button onClick={this.handleOnClick}>Load Comments</button>
+                    <Comments comments={this.props.comments} />
+                </div>
+            )
+     }
 }
 
 const mapStateToProps = state => {
     return {
-      comments: state.comments
-    } 
-  }
+        comments: state.comments
+    }
+}
 
-export default connect(mapStateToProps, {fetchComments})(Comments);
+export default connect(mapStateToProps, {fetchComments})(CommentsContainer);
