@@ -11,12 +11,12 @@ class ArticlesContainer extends Component {
     }
 
       render(){
-        const { articles } = this.props
+        const { allArticles } = this.props.articles
         
         return(
             <div>
                 <h2>Articles</h2>
-                <ArticleCards articles={articles} />
+                <ArticleCards articles={allArticles} />
             </div>
         )
       }
@@ -28,4 +28,4 @@ const mapStateToProps = state => {
   } 
 }
 
-export default connect (mapStateToProps, {fetchArticles})(ArticlesContainer)
+export default connect(mapStateToProps, {fetchArticles})(ArticlesContainer)

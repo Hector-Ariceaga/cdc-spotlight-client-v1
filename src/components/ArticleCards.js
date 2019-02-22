@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Article from './Article'
+import ArticleCard from './ArticleCard'
 
 class ArticleCards extends Component {
     
@@ -12,7 +12,7 @@ class ArticleCards extends Component {
         if (isEmpty(this.props.articles)) {
             return(<div>No Articles</div>)
         } else {
-            const renderCards = this.props.articles.map(article => <Article key={article.id} article={article} />)
+            const renderCards = this.props.articles.map(article => <ArticleCard key={article.id} article={article} />)
 
         return (
             <div className='article_cards'>
