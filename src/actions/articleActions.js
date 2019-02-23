@@ -16,6 +16,13 @@ export const setArticle = article => {
   }
 }
 
+export const addArticle = article => {
+  return {
+    type: 'ADD_ARTICLE',
+    article
+  }
+}
+
 export const fetchArticles = () => {
   return dispatch => {
     dispatch({type: 'START_FETCHING_DATA'})
@@ -36,5 +43,21 @@ export const fetchArticle = (id) => {
     .then(article => {
       dispatch(setArticle(article))
     })
+  }
+}
+
+export const createArticle = article => {
+  return dispatch => {
+    return fetch(new Request('/api/v1/articles', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(article)
+    })
+    )
+    .then(article => {
+      dispatch(addArticle(article))
+      return article.id
+    })
+    .catch(err => console.log(err))
   }
 }
