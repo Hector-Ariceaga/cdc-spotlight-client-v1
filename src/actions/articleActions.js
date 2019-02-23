@@ -52,12 +52,11 @@ export const createArticle = article => {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(article)
-    })
-    )
+    }))
+    .then(res => res.json())
     .then(article => {
       dispatch(addArticle(article))
       return article.id
     })
-    .catch(err => console.log(err))
   }
 }

@@ -17,6 +17,7 @@ class CreateArticle extends Component {
     handleOnSubmit = event => {
         event.preventDefault();
         this.props.createArticle(this.state)
+        .then(id => this.props.history.push(`/articles/${id}`))
     }
 
     handleOnChange = event => {
