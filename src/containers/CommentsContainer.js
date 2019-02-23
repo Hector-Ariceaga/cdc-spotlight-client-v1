@@ -16,7 +16,7 @@ class CommentsContainer extends Component {
                 <div>
                     <h2>Comments</h2>
                     <button onClick={this.handleOnClick}>Load Comments</button>
-                    <Comments comments={this.props.comments} />
+                    <Comments article={this.props.articleId} />
                 </div>
             )
      }
@@ -25,6 +25,7 @@ class CommentsContainer extends Component {
 const mapStateToProps = state => {
     return {
         comments: state.comments
+
     }
 }
 
