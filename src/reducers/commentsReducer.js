@@ -6,6 +6,8 @@ export default function commentsReducer(state=InitialState.comments, action) {
       return action.comments
     case 'REMOVE_COMMENTS':
       return {}
+    case 'ADD_COMMENT':
+      return action.comment
     default:
       return state
   }

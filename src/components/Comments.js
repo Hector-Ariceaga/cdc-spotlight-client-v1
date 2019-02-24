@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Comment from './Comment';
+import CreateComment from '../containers/CreateComment'
 import { fetchComments, removeComments } from '../actions/commentActions';
 
 class Comments extends Component {
@@ -17,10 +18,11 @@ class Comments extends Component {
         } else {
             renderComments = comments.map(comment =>  <Comment key={comment.id} comment={comment} />)
         }
-
+        
         return(
             <div>
                 {renderComments}
+                <CreateComment articleId={this.props.article}/>
             </div>
         )
     }

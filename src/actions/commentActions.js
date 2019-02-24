@@ -11,7 +11,14 @@ export const removeComments = () => {
   return { type: 'REMOVE_COMMENTS'}
 }
 
-export const fetchComments = (id) => {
+export const addComment = comment => {
+  return { 
+    type: 'ADD_COMMENT',
+    comment
+  }
+}
+
+export const fetchComments = id => {
   return (dispatch) => {
     dispatch({type: 'START_FETCHING_DATA'})
     return fetch(`${API_URL}/articles/${id}/comments`)
@@ -22,4 +29,17 @@ export const fetchComments = (id) => {
   }
 }
 
-export default fetchComments;
+export const createComment = comment => {
+  return dispatch => {
+    return fetch(new Request(`/api/v1/articles/${comment.articleId}/comments/`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(comment)
+    }))
+    .then(res => res.json())
+    .then(comment => {
+      dispatch(addComment(comment))
+      return comment.article_id
+    })
+  }
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ArticleForm from './ArticleForm'
+import ArticleForm from '../components/ArticleForm'
 import { createArticle } from '../actions/articleActions'
 
 class CreateArticle extends Component {
