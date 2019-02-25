@@ -4,16 +4,17 @@
 
 .backdrop {
   background-image: url('https://backgrounds-free.com/highresolution/133-free-backgrounds.png');
+  height:100vh;
 }
 
 .about-backdrop{
   background-image: url('./images/book-graphic.jpg');
   height: 100vh;
-  min-height: 100%
 }
 
 .form-backdrop{
   background-image: url('./images/form-background.jpg');
+  height: 100vh;
 }
 
 .article-backdrop{
@@ -28,7 +29,11 @@
 .fill {
   min-height: 100%;
   height: 100%;
-  height: 94vh
+  height: 100vh;
+}
+
+.extend-background {
+  background-size: cover;
 }
 
 .light-header {
@@ -55,8 +60,18 @@
   font-size: 2em;
 }
 
+.sm-text {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
 .custom-textarea {
   width: 500px;
+  height: 500px;
+}
+
+.custom-textinput {
+  width: 400px;
 }
 
 .article-card {
@@ -65,4 +80,9 @@
   border-color: black;
 }
 
+.comments {
+  margin-top: 1em;
+  border-top: dashed 1px;
+  border-color: darkgray;
+}
 

@@ -14,7 +14,7 @@ class ArticlesContainer extends Component {
         const { allArticles } = this.props.articles
         
         return(
-            <div className='article-backdrop fill'>
+            <div className='article-backdrop extend-background'>
                 <h1 className='lg-text'>Articles</h1>
                 <ArticleCards articles={allArticles} />
             </div>

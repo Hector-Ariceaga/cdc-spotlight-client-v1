@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Comment from './Comment';
-import CreateComment from '../containers/CreateComment'
+// import CreateComment from '../containers/CreateComment'
 import { fetchComments, removeComments } from '../actions/commentActions';
 
 class Comments extends Component {
@@ -22,7 +22,8 @@ class Comments extends Component {
         return(
             <div>
                 {renderComments}
-                <CreateComment articleId={this.props.article}/>
+                <br></br>
+                <button type='button' className='btn btn-secondary' disabled>Add a comment</button>
             </div>
         )
     }

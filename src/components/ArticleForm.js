@@ -19,7 +19,7 @@ export default class ArticleForm extends Component {
                     <div className='form-group'>
                         <label> Title
                             <input
-                                class='form-control'
+                                class='form-control custom-textinput'
                                 name='title'
                                 type='text'
                                 value={ title }
@@ -29,7 +29,7 @@ export default class ArticleForm extends Component {
                     <div>
                         <label className='form-group'> Author
                             <input
-                                class='form-control'
+                                class='form-control custom-textinput'
                                 name='author'
                                 type='text'
                                 value={ author }
@@ -39,7 +39,7 @@ export default class ArticleForm extends Component {
                     <div className='form-group'>
                         <label> Description
                             <input
-                                class='form-control'
+                                class='form-control custom-textinput'
                                 name='description'
                                 type='text'
                                 value={ description }
