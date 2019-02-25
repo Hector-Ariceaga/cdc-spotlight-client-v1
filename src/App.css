@@ -4,11 +4,12 @@
 
 .backdrop {
   background-image: url('https://backgrounds-free.com/highresolution/133-free-backgrounds.png');
-  height: 100%;
 }
 
-#jumbotron{
-  height: 94vh
+.about-backdrop{
+  background-image: url('./images/book-graphic.jpg');
+  height: 100vh;
+  min-height: 100%
 }
 
 .navbar-backdrop {
@@ -19,8 +20,25 @@
 .fill {
   min-height: 100%;
   height: 100%;
+  height: 100vh
 }
 
 .light-header {
+  margin-top: 6em;
   color: white;
+}
+
+.about {
+  margin-top: 18em;
+  background-color: whitesmoke;
+  border: solid gray;
+  border-width: 5px;
+}
+
+.lg-text{
+  font-size: 2.5em;
+}
+
+.md-text{
+  font-size: 2em;
 }
