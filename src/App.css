@@ -16,9 +16,13 @@
   background-image: url('./images/form-background.jpg');
 }
 
+.article-backdrop{
+  background: linear-gradient(to bottom, #e2e2e2 0%,#e2e2e2 51%,#e2e2e2 75%);
+}
+
 .navbar-backdrop {
   background-color: #C71313;
-  margin: 0 0 1px;
+  margin-bottom: 1px;
 }
 
 .fill {
@@ -39,15 +43,26 @@
   border-width: 5px;
 }
 
-.lg-text{
+.xl-text {
+  font-size: 4em;
+}
+
+.lg-text {
   font-size: 2.5em;
 }
 
-.md-text{
+.md-text {
   font-size: 2em;
 }
 
 .custom-textarea {
   width: 500px;
 }
+
+.article-card {
+  background: linear-gradient(to bottom, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+  border: solid 2px;
+  border-color: black;
+}
+
 

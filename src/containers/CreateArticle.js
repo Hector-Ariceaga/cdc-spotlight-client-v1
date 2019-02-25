@@ -31,7 +31,7 @@ class CreateArticle extends Component {
                 <h1>Create Article</h1>
                 <ArticleForm
                     article={this.state}
-                    submitValue='Create Student'
+                    submitValue='Create Article'
                     onSubmit={this.handleOnSubmit}
                     onChange={this.handleOnChange} />
             </div>

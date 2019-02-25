@@ -7,10 +7,16 @@ const ArticleCard = (props) => {
     
     return(
         <div>
-            <h1>{title}</h1>
-            <h3>{author}</h3>
-            <p>{description}</p>
-            <Link to={`/articles/${id}`}>See Full Article</Link>
+            <div className='container'>
+                <div className='row justify-content-center'>
+                    <div className='col-md-6 shadow p-3 mb-5 bg-white rounded article-card'>
+                        <h2>{title}</h2>
+                        <h5>{author}</h5>
+                        <p>{description}</p>
+                        <Link to={`/articles/${id}`}>See Full Article</Link>
+                    </div>
+                 </div>     
+            </div> 
         </div>
     )
 }

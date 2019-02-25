@@ -11,7 +11,7 @@ const ArticleCards = (props) => {
         const renderCards = props.articles.map(article => <ArticleCard key={article.id} article={article} />)
 
         return (
-            <div className='article_cards'>
+            <div>
                 {renderCards}
             </div>
         )
