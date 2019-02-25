@@ -19,6 +19,8 @@
 
 .article-backdrop{
   background: linear-gradient(to bottom, #e2e2e2 0%,#e2e2e2 51%,#e2e2e2 75%);
+  background-size: cover;
+  min-height: 100vh
 }
 
 .navbar-backdrop {

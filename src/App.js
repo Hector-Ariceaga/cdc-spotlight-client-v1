@@ -22,7 +22,7 @@ class App extends Component {
               <Route exact path='/' component={Home} />
               <Route exact path='/articles' component={ArticlesContainer} />
               <Route exact path='/articles/new' component={CreateArticle} />
-              <Route exact path='/articles/:id' component={Article} />
+              <Route exact path='/articles/:id' component={Article} className='article-backdrop extend-background'/>
               <Route exact path="/about" component={About} />
             </Switch>
          
