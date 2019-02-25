@@ -8,7 +8,7 @@ const ArticleCards = (props) => {
         return(<div>No Articles</div>)
 
     } else {
-        const renderCards = props.articles.map(article => <ArticleCard key={article.id} article={article} />)
+        const renderCards = props.articles.map(article => <ArticleCard key={article.id} article={article} articles={props.articles}/>)
 
         return (
             <div>

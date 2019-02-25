@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 const ArticleCard = (props) => {
 
     const {id, title, author, description} = props.article
-    
     return(
         <div>
             <div className='container'>
@@ -13,7 +12,7 @@ const ArticleCard = (props) => {
                         <h2>{title}</h2>
                         <h5>{author}</h5>
                         <p>{description}</p>
-                        <Link to={`/articles/${id}`}>See Full Article</Link>
+                        <Link to={`/articles/${id}`} articles={props.articles}>See Full Article</Link>
                     </div>
                  </div>     
             </div> 

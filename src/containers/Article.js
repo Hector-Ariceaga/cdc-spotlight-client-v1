@@ -5,9 +5,17 @@ import {fetchComments} from '../actions/commentActions'
 import {fetchArticle} from '../actions/articleActions'
 
 class Article extends Component {
-    componentDidMount = () => {
-        this.props.fetchArticle(this.props.articleId)
+    componentDidMount = (props) => {
+        if (this.props.articles.allArticles.length > 0){
+            let articleId = parseInt(this.props.match.params.id)
+            this.props.articles.allArticles.forEach(article => {
+                if (article.id === articleId) {return article} 
+            })
+        } else {
+            this.props.fetchArticle(this.props.articleId)
+        }
     }
+        
 
     componentWillReceiveProps = (props) => {
         if (props.article.id === undefined) {
@@ -40,6 +48,7 @@ class Article extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
+        articles: state.articles,
         article: state.articles.article,
         articleId: ownProps.match.params.id
     }
