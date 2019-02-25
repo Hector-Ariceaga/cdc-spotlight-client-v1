@@ -27,7 +27,7 @@ class CreateArticle extends Component {
 
     render() {
         return (
-            <div>
+            <div class='form-backdrop fill'>
                 <h1>Create Article</h1>
                 <ArticleForm
                     article={this.state}

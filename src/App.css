@@ -12,6 +12,10 @@
   min-height: 100%
 }
 
+.form-backdrop{
+  background-image: url('./images/form-background.jpg');
+}
+
 .navbar-backdrop {
   background-color: #C71313;
   margin: 0 0 1px;
@@ -20,7 +24,7 @@
 .fill {
   min-height: 100%;
   height: 100%;
-  height: 100vh
+  height: 94vh
 }
 
 .light-header {
@@ -29,7 +33,7 @@
 }
 
 .about {
-  margin-top: 18em;
+  margin-top: 13em;
   background-color: whitesmoke;
   border: solid gray;
   border-width: 5px;
@@ -42,3 +46,8 @@
 .md-text{
   font-size: 2em;
 }
+
+.custom-textarea {
+  width: 500px;
+}
+
