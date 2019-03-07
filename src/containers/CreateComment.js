@@ -33,12 +33,11 @@ class CreateComment extends Component {
         return (
             <div>
                 <h4>Add a Comment</h4>
-                {/* <CommentForm
+                <CommentForm
                     comment={this.state}
-                    articleId={this.props.articleId}
                     submitValue='Submit'
                     onSubmit={this.handleOnSubmit}
-                    onChange={this.handleOnChange} /> */}
+                    onChange={this.handleOnChange} />
             </div>
         )
     }

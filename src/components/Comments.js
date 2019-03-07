@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Comment from './Comment';
 // import CreateComment from '../containers/CreateComment'
 import { fetchComments, removeComments } from '../actions/commentActions';
+import CreateComment from '../containers/CreateComment';
 
 class Comments extends Component {
     componentWillUnmount = () => {
@@ -24,6 +25,7 @@ class Comments extends Component {
                 {renderComments}
                 <br></br>
                 <button type='button' className='btn btn-secondary' disabled>Add a comment</button>
+                <CreateComment articleId={this.props.articleId}/>
             </div>
         )
     }

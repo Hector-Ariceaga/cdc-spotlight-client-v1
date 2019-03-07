@@ -26,7 +26,7 @@ class CommentsContainer extends Component {
 
                 <div className='comments'>
                     {commentHeader}
-                    <Comments article={this.props.articleId} />
+                    <Comments articleId={this.props.articleId} />
                 </div>
                 
             </div>
@@ -36,8 +36,7 @@ class CommentsContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        comments: state.comments
-
+        comments: state.comments,
     }
 }
 

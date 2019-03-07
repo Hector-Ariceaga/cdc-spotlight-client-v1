@@ -1,13 +1,11 @@
-import InitialState from "./InitialState";
-
-export default function commentsReducer(state=InitialState.comments, action) {
+export default function commentsReducer(state=[], action) {
   switch(action.type){
     case 'SET_COMMENTS':
       return action.comments
     case 'REMOVE_COMMENTS':
-      return {}
+      return []
     case 'ADD_COMMENT':
-      return action.comment
+      return [...state, action.comment]
     default:
       return state
   }

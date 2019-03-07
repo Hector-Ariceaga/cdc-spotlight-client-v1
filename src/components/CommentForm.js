@@ -17,12 +17,6 @@ export default class CommentForm extends Component {
             <div>
                 <form onSubmit={this.handleOnSubmit}>
                     <div>
-                        <input 
-                        type='hidden'
-                        name='articleId'
-                        value={this.props.articleId} 
-                        />
-
                         <label> Username
                             <input
                                 name='username'

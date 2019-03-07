@@ -31,7 +31,7 @@ export const fetchComments = id => {
 
 export const createComment = comment => {
   return dispatch => {
-    return fetch(new Request(`/api/v1/articles/${comment.articleId}/comments/`, {
+    return fetch(new Request(`${API_URL}/articles/${comment.articleId}/comments/`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(comment)
