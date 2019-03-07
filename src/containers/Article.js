@@ -6,14 +6,7 @@ import {fetchArticle} from '../actions/articleActions'
 
 class Article extends Component {
     componentDidMount = (props) => {
-        if (this.props.articles.allArticles.length > 0){
-            let articleId = parseInt(this.props.match.params.id)
-            this.props.articles.allArticles.forEach(article => {
-                if (article.id === articleId) {return article} 
-            })
-        } else {
-            this.props.fetchArticle(this.props.articleId)
-        }
+        this.props.fetchArticle(this.props.articleId)
     }
         
 
@@ -24,7 +17,7 @@ class Article extends Component {
     }
     
     render(){
-     const {id, title, author, content} = this.props.article
+     const {title, author, content} = this.props.article
         return(
             <div className='article-backdrop'>
                 <div className='container'>
@@ -33,7 +26,7 @@ class Article extends Component {
                             <h1 className='lg-text'>{title}</h1>
                             <h4>{author}</h4>
                             <p>{content}</p>
-                            <CommentsContainer comments={this.props.comments} articleId={id}/>
+                            <CommentsContainer articleId={this.props.articleId}/>
                         </div>
                     </div>
                 </div>
@@ -50,7 +43,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         articles: state.articles,
         article: state.articles.article,
-        articleId: ownProps.match.params.id
+        articleId: ownProps.match.params.id,
     }
 }
 
