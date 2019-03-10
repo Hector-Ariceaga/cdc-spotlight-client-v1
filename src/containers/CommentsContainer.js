@@ -7,25 +7,15 @@ import Comments from '../components/Comments'
 
 class CommentsContainer extends Component {
     
-    handleOnClick = () => {
+    componentDidMount = () => {
         this.props.fetchComments(this.props.articleId)
     }
 
     render(){
-        let commentHeader;
-
-        if (this.props.comments.length === 0) {
-            commentHeader = <div>There are currently no comments for this article.</div>
-        } else if(this.props.comments.length > 0) {
-            commentHeader = <h2>Comments</h2>
-        }
-
         return(
             <div>
-                <button type='button' className='btn btn-light' onClick={this.handleOnClick}>Load Comments</button>
-
                 <div className='comments'>
-                    {commentHeader}
+                    <h2>Comments</h2>
                     <Comments articleId={this.props.articleId} />
                 </div>
                 

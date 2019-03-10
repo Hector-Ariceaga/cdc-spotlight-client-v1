@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Comment from './Comment';
-// import CreateComment from '../containers/CreateComment'
 import { fetchComments, removeComments } from '../actions/commentActions';
 import CreateComment from '../containers/CreateComment';
 
@@ -15,7 +14,7 @@ class Comments extends Component {
         const {comments} = this.props
 
         if (comments === undefined || Object.entries(comments).length === 0) {
-            renderComments = ''
+            renderComments = <h3>There no comments for this article yet.</h3>
         } else {
             renderComments = comments.map(comment =>  <Comment key={comment.id} comment={comment} />)
         }
@@ -24,7 +23,6 @@ class Comments extends Component {
             <div>
                 {renderComments}
                 <br></br>
-                <button type='button' className='btn btn-secondary' disabled>Add a comment</button>
                 <CreateComment articleId={this.props.articleId}/>
             </div>
         )
