@@ -9,6 +9,10 @@ export default function articlesReducer(state={allArticles: [], article: {}, art
       
     case 'SET_ARTICLE':
       return {article: action.article}
+
+    case 'ADD_ARTICLE':
+      return {...state, article: action.article}
+      
     default:
       return state
   }
