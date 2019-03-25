@@ -47,8 +47,9 @@ export const fetchArticle = (id) => {
 }
 
 export const createArticle = article => {
+  debugger;
   return dispatch => {
-    return fetch(new Request('/api/v1/articles', {
+    return fetch(new Request(`${API_URL}/articles`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(article)
