@@ -1,6 +1,8 @@
 # Spotlight
 Your go to web application for viewing and contributing to articles!
 
+Checkout the video [demo](https://youtu.be/DU6coBUHEs0)!
+
 ## Installation 
 This front-end client was designed to work with the following [rails API](https://github.com/Hector-Ariceaga/cdc-spotlight-API).
 
