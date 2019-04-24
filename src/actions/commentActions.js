@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/v1'
+const API_URL = process.env.REACT_APP_API_URL
 
 export const setComments = comments => {
   return {
@@ -21,7 +21,7 @@ export const addComment = comment => {
 export const fetchComments = id => {
   return (dispatch) => {
     dispatch({type: 'START_FETCHING_DATA'})
-    return fetch(`${API_URL}/articles/${id}/comments`)
+    return fetch(`${API_URL}articles/${id}/comments`)
     .then(res => res.json())
     .then(comments => {
       dispatch(setComments(comments))
@@ -31,7 +31,7 @@ export const fetchComments = id => {
 
 export const createComment = comment => {
   return dispatch => {
-    return fetch(new Request(`${API_URL}/articles/${comment.articleId}/comments/`, {
+    return fetch(new Request(`${API_URL}articles/${comment.articleId}/comments/`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(comment)
